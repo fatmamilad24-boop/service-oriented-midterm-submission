@@ -1,22 +1,27 @@
 {
-  "name": "api-gateway",
+  "name": "restaurant-food-delivery",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "Food Delivery Application with Microservices",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "install-all": "npm install --prefix backend/api-gateway && npm install --prefix backend/user-service && npm install --prefix backend/restaurant-service && npm install --prefix backend/order-service && npm install --prefix backend/delivery-service && npm install --prefix frontend/react-app",
+    "start-gateway": "npm start --prefix backend/api-gateway",
+    "start-user": "npm start --prefix backend/user-service",
+    "start-restaurant": "npm start --prefix backend/restaurant-service",
+    "start-order": "npm start --prefix backend/order-service",
+    "start-delivery": "npm start --prefix backend/delivery-service",
+    "start-frontend": "npm start --prefix frontend/react-app",
+    "start-all": "concurrently \"npm run start-gateway\" \"npm run start-user\" \"npm run start-restaurant\" \"npm run start-order\" \"npm run start-delivery\" \"npm run start-frontend\"",
+    "dev-gateway": "npm run dev --prefix backend/api-gateway",
+    "dev-user": "npm run dev --prefix backend/user-service",
+    "dev-restaurant": "npm run dev --prefix backend/restaurant-service",
+    "dev-order": "npm run dev --prefix backend/order-service",
+    "dev-delivery": "npm run dev --prefix backend/delivery-service",
+    "dev-frontend": "npm start --prefix frontend/react-app",
+    "dev-all": "concurrently \"npm run dev-gateway\" \"npm run dev-user\" \"npm run dev-restaurant\" \"npm run dev-order\" \"npm run dev-delivery\" \"npm run dev-frontend\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "cors": "^2.8.6",
-    "dotenv": "^17.3.1",
-    "express": "^5.2.1",
-    "helmet": "^8.1.0",
-    "http-proxy-middleware": "^3.0.5",
-    "morgan": "^1.10.1"
-  }
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  },
+  "author": "Your Team Name",
+  "license": "ISC"
 }
